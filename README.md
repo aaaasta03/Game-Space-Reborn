@@ -7,7 +7,7 @@ A Vivo GameCube-inspired, non-root gaming assistant scaffold for Android 10+ (ta
 - Free Fire MAX package detection and launch (`com.dts.freefiremax`)
 - Shizuku binder status and permission request
 - Shizuku UserService binder connection
-- Fixed diagnostics: shell UID/PID, `/proc/meminfo`, build fingerprint, Android release property
+- Fixed read-only diagnostics: shell UID/PID, `/proc/meminfo`, build fingerprint, Android release property, Free Fire MAX GameManager modes/configs, thermal service, display modes and battery state
 - Profile preference switches persisted locally (placeholder settings only)
 - GitHub Actions debug APK build
 
@@ -19,8 +19,9 @@ A Vivo GameCube-inspired, non-root gaming assistant scaffold for Android 10+ (ta
 - Refresh-rate switching
 - Floating overlay implementation (permission is declared only; no overlay UI is shipped)
 - Device-specific tuning on Realme RMX5003
+- GameManager/thermal/display diagnostic results have not yet been collected from the target device; command availability and OEM behavior must be validated there
 
-The preference switches currently save values only. They do not execute system changes or claim performance improvements. Diagnostics are read-only. The service exposes a fixed diagnostic ID allowlist and accepts no arbitrary command text.
+The preference switches currently save values only. They do not execute system changes or claim performance improvements. Diagnostics are read-only. The service exposes a fixed diagnostic ID allowlist and accepts no arbitrary command text. New checks use fixed read-only `cmd game list-modes`, `cmd game list-configs`, and `dumpsys` invocations. The app does not call any GameManager mode-setting command. Diagnostic output is limited to 6,000 characters per command.
 
 
 ## Build with GitHub Actions (phone-friendly)
