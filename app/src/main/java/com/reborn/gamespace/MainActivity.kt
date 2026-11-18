@@ -263,6 +263,14 @@ private fun GameSpaceScreen(
                     Button(onClick = { onDiagnostic(2) }, modifier = Modifier.fillMaxWidth()) { Text("Memory information (/proc/meminfo)") }
                     Button(onClick = { onDiagnostic(3) }, modifier = Modifier.fillMaxWidth()) { Text("Build fingerprint") }
                     Button(onClick = { onDiagnostic(4) }, modifier = Modifier.fillMaxWidth()) { Text("Android release property") }
+                    Text("GAME MANAGER — READ ONLY", color = Mint, fontWeight = FontWeight.Bold, style = MaterialTheme.typography.labelLarge)
+                    Button(onClick = { onDiagnostic(5) }, modifier = Modifier.fillMaxWidth()) { Text("Free Fire MAX supported game modes") }
+                    Button(onClick = { onDiagnostic(6) }, modifier = Modifier.fillMaxWidth()) { Text("Free Fire MAX intervention configs") }
+                    Text("DEVICE STATE — READ ONLY", color = Mint, fontWeight = FontWeight.Bold, style = MaterialTheme.typography.labelLarge)
+                    Button(onClick = { onDiagnostic(7) }, modifier = Modifier.fillMaxWidth()) { Text("Thermal service status") }
+                    Button(onClick = { onDiagnostic(8) }, modifier = Modifier.fillMaxWidth()) { Text("Display and refresh-rate diagnostics") }
+                    Button(onClick = { onDiagnostic(9) }, modifier = Modifier.fillMaxWidth()) { Text("Battery state") }
+                    Text("These checks only read system information. They do not change game modes, refresh rate, thermal policy or battery settings.", color = Color(0xFFFFC979), style = MaterialTheme.typography.bodySmall)
                     Text(serviceInfo, color = Color(0xFFB7C5D7), style = MaterialTheme.typography.bodySmall)
                 }
             }
