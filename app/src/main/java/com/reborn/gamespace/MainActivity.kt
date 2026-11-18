@@ -62,7 +62,7 @@ class MainActivity : ComponentActivity() {
         if (code == requestCode) {
             if (result == PackageManager.PERMISSION_GRANTED) {
                 shizukuState = "Permission granted · ready"
-                bindShellService()
+                connectDiagnostics()
             } else shizukuState = "Permission denied"
         }
     }
